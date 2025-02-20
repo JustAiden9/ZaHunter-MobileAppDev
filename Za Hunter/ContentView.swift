@@ -15,12 +15,14 @@ struct ContentView: View {
     @State private var mapRegion = MKCoordinateRegion()
     var body: some View {
         VStack {
-            Map(position: $startPosition) {
-                UserAnnotation()
-                ForEach(places) { place in
-                    Annotation(place.mapItem.name!, coordinate: place.mapItem.placemark.coordinate) {
-                        NavigationLink(destination: LocationDetailsView(mapItem: place.mapItem)) {
-                            Image("pizza")
+            NavigationView {
+                Map(position: $startPosition) {
+                    UserAnnotation()
+                    ForEach(places) { place in
+                        Annotation(place.mapItem.name!, coordinate: place.mapItem.placemark.coordinate) {
+                            NavigationLink(destination: LocationDetailsView(mapItem: place.mapItem)) {
+                                Image("pizza")
+                            }
                         }
                     }
                 }
