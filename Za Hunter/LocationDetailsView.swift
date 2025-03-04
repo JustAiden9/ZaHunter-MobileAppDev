@@ -22,7 +22,7 @@ struct LocationDetailsView: View {
             Text(mapItem.phoneNumber!).padding()
             if let url = mapItem.url {
                 Link(destination: url, label: {
-                    Text("Website").padding()
+                    Text("Websitee").padding()
                 })
             }
             Button(action: {
